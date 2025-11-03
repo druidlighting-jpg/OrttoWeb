@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORTTO Barbershop - Premium Men's Grooming Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-black: #000000;
+            --secondary-black: #1a1a1a;
+            --gold: #c9a961;
+            --light-gold: #d4b76a;
+            --text-light: #ffffff;
+            --text-gray: #888888;
+            --bg-light: #fafafa;
+            --bg-cream: #f5f2ed;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Didot', 'Bodoni MT', 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--secondary-black);
+            overflow-x: hidden;
+            background: var(--text-light);
+        }
+
+        /* Ensure all sections clear the fixed header */
+        section {
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--primary-black);
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 9999;
+            border-bottom: 2px solid var(--gold);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-circle {
+            /* increased size and removed gold border as requested */
+            width: 120px;
+            height: 120px;
+            border: none;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .logo-icon {
+            color: var(--gold);
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        /* Logo image when using an asset file */
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            border-radius: 0;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .ortto {
+            font-size: 1.8rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .logo-text .barbershop {
+            font-size: 0.7rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .book-btn {
+            background: transparent;
+            color: var(--gold);
+            padding: 0.8rem 2rem;
+            border: 1px solid var(--gold);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .book-btn:hover {
+            background: var(--gold);
+            color: var(--primary-black);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23000" width="1200" height="800"/><path fill="%23111" d="M0 400L50 425L100 400L150 425L200 400L250 425L300 400L350 425L400 400L450 425L500 400L550 425L600 400L650 425L700 400L750 425L800 400L850 425L900 400L950 425L1000 400L1050 425L1100 400L1150 425L1200 400V800H0V400Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 120px;
+            text-align: center;
+            margin-top: 85px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            color: #B9903B;
+        }
+
+        .hero .tagline {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            font-weight: 300;
+            color: var(--text-light);
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        /* Primary (large) and secondary (small) button variants */
+        .book-btn.btn-primary {
+            padding: 1.8rem 4rem;
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+            min-width: 400px;
+            font-weight: 400;
+            text-transform: uppercase;
+            background: white;
+            color: var(--primary-black);
+            border: none;
+        }
+
+        .book-btn.btn-primary:hover {
+            background: var(--gold);
+            color: var(--primary-black);
+            border: none;
+        }
+
+        .book-btn.btn-secondary {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: var(--text-light);
+            scroll-margin-top: 85px;
+            position: relative;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+
+        .about-text h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 1px;
+            background: var(--gold);
+            margin-top: 20px;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-black);
+        }
+
+        .about-text ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .about-text li {
+            margin-bottom: 1rem;
+            color: var(--secondary-black);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .about-text li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--gold);
+        }
+
+        .about-image::after {
+            content: "EXCELLENCE IN GROOMING";
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-black);
+            color: var(--gold);
+            padding: 15px 25px;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            border: 1px solid var(--gold);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: var(--bg-cream);
+            scroll-margin-top: 85px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--primary-black);
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 5px;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid #e0e0e0;
+            position: relative;
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .service-price {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        /* Staff Section */
+        .staff {
+            padding: 100px 0;
+            background: var(--primary-black);
+            scroll-margin-top: 85px;
+        }
+
+        .staff .section-header h2,
+        .staff .section-header p {
+            color: var(--text-light);
+        }
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .staff-member {
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .staff-photo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #333 100%);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--gold);
+            transition: var(--transition);
+        }
+
+        .staff-member:hover .staff-photo {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+        }
+
+        .staff-photo::before {
+            content: "👤";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.1;
+            color: var(--gold);
+        }
+
+        .staff-photo::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        /* Individual staff photo variations */
+        .staff-photo-1 {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #404040 100%);
+        }
+
+        .staff-photo-2 {
+            background: linear-gradient(225deg, #333 0%, #1a1a1a 50%, #2a2a2a 100%);
+        }
+
+        .staff-photo-3 {
+            background: linear-gradient(45deg, #2a2a2a 0%, #222 50%, #3a3a3a 100%);
+        }
+
+        .staff-photo-4 {
+            background: linear-gradient(315deg, #404040 0%, #1a1a1a 50%, #333 100%);
+        }
+
+        .staff-name {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        .staff-title {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .staff-experience {
+            font-size: 0.85rem;
+            color: var(--light-gold);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .staff-specialties {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            max-width: 250px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+
+        .staff-social {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .staff-social a {
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 0.8rem;
+            transition: var(--transition);
+            text-decoration: none;
+            opacity: 0.7;
+        }
+
+        .staff-social a:hover {
+            background: var(--gold);
+            color: var(--primary-black);
+            opacity: 1;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background: var(--text-light);
+            scroll-margin-top: 85px;
+        }
+
+        .gallery .section-header h2,
+        .gallery .section-header p {
+            color: var(--primary-black);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 350px;
+            background: linear-gradient(135deg, var(--secondary-black), var(--primary-black));
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid #e0e0e0;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--gold);
+            transform: scale(1.02);
+        }
+
+        .gallery-item::after {
+            content: "VIEW";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            opacity: 0;
+            transition: var(--transition);
+            padding: 10px 20px;
+            border: 1px solid var(--gold);
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--bg-cream);
+            scroll-margin-top: 85px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 3rem;
+            border: 1px solid #e0e0e0;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 5px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--secondary-black);
+            padding-top: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: 300;
+            color: var(--primary-black);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--text-light);
+            scroll-margin-top: 85px;
+        }
+
+        .contact .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .contact-info h3::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+            margin: 15px auto 0;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            color: var(--secondary-black);
+            line-height: 1.8;
+        }
+
+        .hours-table {
+            margin-top: 1.5rem;
+        }
+
+        .hours-table div {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .contact .book-btn {
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-black);
+            color: var(--text-light);
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--gold);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: var(--text-gray);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--primary-black);
+        }
+
+        /* Mobile Responsive */
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-black);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid var(--gold);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .logo-text .ortto {
+                font-size: 1.5rem;
+            }
+
+            .logo-text .barbershop {
+                font-size: 0.6rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+                letter-spacing: 5px;
+            }
+
+            .hero .tagline {
+                font-size: 0.9rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-text h2,
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .staff-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .staff-photo {
+                width: 180px;
+                height: 180px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-10deg) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0) scale(1);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .staff-member {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .staff-photo {
+            animation: rotateIn 0.6s ease-out;
+        }
+
+        /* Additional Refinements */
+        ::selection {
+            background: var(--gold);
+            color: var(--primary-black);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-black);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--light-gold);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo-container">
+                <div class="logo-circle">
+                            <img src="assets/ortto-logo.png" alt="ORTTO logo" class="logo-img">
+                        </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#staff">Staff</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="https://book.squareup.com/appointments/h9iuqgmy192wlo/location/L3WCV1NWDYNB6/services" class="book-btn" target="_blank" rel="noopener noreferrer">Book Now</a>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container fade-in">
+            <h1>ORTTO BARBERSHOP</h1>
+            <p class="tagline">The Premium Barbershop Experience</p>
+            <p class="hero-description">
+                Where classic craftsmanship meets contemporary excellence. 
+                Experience the finest in men's grooming at Boston's premier destination for the modern gentleman.
+            </p>
+            <div class="hero-cta">
+                <a href="https://book.squareup.com/appointments/h9iuqgmy192wlo/location/L3WCV1NWDYNB6/services" class="book-btn btn-primary" target="_blank" rel="noopener noreferrer">Book Appointment</a>
+                <a href="#services" class="book-btn btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>THE ORTTO STANDARD</h2>
+                    <p>
+                        ORTTO Barbershop represents the pinnacle of men's grooming excellence. 
+                        Our master barbers combine time-honored techniques with contemporary precision 
+                        to deliver an unparalleled grooming experience.
+                    </p>
+                    <p>
+                        <strong>Distinction in Every Detail:</strong>
+                    </p>
+                    <ul>
+                        <li>Master barbers with decades of refined expertise</li>
+                        <li>Personalized consultations for every client</li>
+                        <li>Traditional straight razor techniques</li>
+                        <li>Premium imported grooming products</li>
+                        <li>Luxurious atmosphere of sophistication</li>
+                    </ul>
+                    <p style="margin-top: 2rem; font-style: italic; color: var(--text-gray);">
+                        "Excellence is not just our standard — it's our tradition."
+                    </p>
+                </div>
+                <div class="about-image fade-in"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>SERVICES</h2>
+                <p>Refined grooming for the discerning gentleman</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">✂</div>
+                    <h3>SIGNATURE CUT</h3>
+                    <p>Precision haircut with consultation, cleansing, and finishing touches</p>
+                    <p class="service-price">$45</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">◆</div>
+                    <h3>EXECUTIVE SHAVE</h3>
+                    <p>Traditional straight razor shave with hot towel and aftercare treatment</p>
+                    <p class="service-price">$55</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">▬</div>
+                    <h3>BEARD SCULPTING</h3>
+                    <p>Expert beard shaping, trimming, and conditioning service</p>
+                    <p class="service-price">$35</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">★</div>
+                    <h3>THE ORTTO EXPERIENCE</h3>
+                    <p>Complete grooming package including cut, shave, and beard service</p>
+                    <p class="service-price">$125</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">○</div>
+                    <h3>GREY BLENDING</h3>
+                    <p>Natural color enhancement and grey coverage treatment</p>
+                    <p class="service-price">$65</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">◈</div>
+                    <h3>FACIAL TREATMENT</h3>
+                    <p>Rejuvenating facial with cleansing and moisturizing therapy</p>
+                    <p class="service-price">$75</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section class="staff" id="staff">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>OUR MASTER BARBERS</h2>
+                <p>Meet the artisans behind the experience</p>
+            </div>
+            <div class="staff-grid">
+                <div class="staff-member fade-in">
+                    <div class="staff-photo staff-photo-1"></div>
+                    <h3 class="staff-name">MARCUS ORTEGA</h3>
+                    <p class="staff-title">Founder & Master Barber</p>
+                    <p class="staff-experience">20+ Years Experience</p>
+                    <p class="staff-specialties">
+                        Specializes in classic cuts, straight razor shaves, and traditional European techniques
+                    </p>
+                    <div class="staff-social">
+                        <a href="#" aria-label="Instagram">◉</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="staff-member fade-in">
+                    <div class="staff-photo staff-photo-2"></div>
+                    <h3 class="staff-name">JAMES MILLER</h3>
+                    <p class="staff-title">Senior Barber</p>
+                    <p class="staff-experience">15+ Years Experience</p>
+                    <p class="staff-specialties">
+                        Expert in modern fades, textured cuts, and beard sculpting
+                    </p>
+                    <div class="staff-social">
+                        <a href="#" aria-label="Instagram">◉</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="staff-member fade-in">
+                    <div class="staff-photo staff-photo-3"></div>
+                    <h3 class="staff-name">ALESSANDRO ROSSI</h3>
+                    <p class="staff-title">Style Director</p>
+                    <p class="staff-experience">12+ Years Experience</p>
+                    <p class="staff-specialties">
+                        Contemporary styling, precision cuts, and color treatments
+                    </p>
+                    <div class="staff-social">
+                        <a href="#" aria-label="Instagram">◉</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="staff-member fade-in">
+                    <div class="staff-photo staff-photo-4"></div>
+                    <h3 class="staff-name">DAVID CHEN</h3>
+                    <p class="staff-title">Senior Stylist</p>
+                    <p class="staff-experience">10+ Years Experience</p>
+                    <p class="staff-specialties">
+                        Asian hair expertise, creative designs, and detailed finishing
+                    </p>
+                    <div class="staff-social">
+                        <a href="#" aria-label="Instagram">◉</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>OUR CRAFT</h2>
+                <p>Precision and artistry in every detail</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in"></div>
+                <div class="gallery-item fade-in"></div>
+                <div class="gallery-item fade-in"></div>
+                <div class="gallery-item fade-in"></div>
+                <div class="gallery-item fade-in"></div>
+                <div class="gallery-item fade-in"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>CLIENT TESTIMONIALS</h2>
+                <p>The ORTTO experience, in their words</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        The attention to detail at ORTTO is unmatched. Every visit feels like a luxury experience. 
+                        They've earned my loyalty for life.
+                    </p>
+                    <p class="testimonial-author">— JAMES WELLINGTON</p>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        ORTTO has redefined what I expect from a barbershop. The craftsmanship, 
+                        the atmosphere, the service — all exceptional.
+                    </p>
+                    <p class="testimonial-author">— ROBERT STERLING</p>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        Simply the finest barbershop in Boston. The traditional shave is an art form here, 
+                        and the results speak for themselves.
+                    </p>
+                    <p class="testimonial-author">— MICHAEL ASHFORD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>VISIT ORTTO</h2>
+                <p>Experience excellence in grooming</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>LOCATION</h3>
+                    <p>456 Newbury Street</p>
+                    <p>Back Bay, Boston</p>
+                    <p>MA 02116</p>
+                    <p style="margin-top: 1rem;">(617) 555-ORTTO</p>
+                </div>
+                <div class="contact-info fade-in">
+                    <h3>HOURS</h3>
+                    <div class="hours-table">
+                        <div><span>Monday</span><span>9:00 - 7:00</span></div>
+                        <div><span>Tuesday</span><span>9:00 - 7:00</span></div>
+                        <div><span>Wednesday</span><span>9:00 - 7:00</span></div>
+                        <div><span>Thursday</span><span>9:00 - 7:00</span></div>
+                        <div><span>Friday</span><span>9:00 - 7:00</span></div>
+                        <div><span>Saturday</span><span>9:00 - 8:00</span></div>
+                        <div><span>Sunday</span><span>Closed</span></div>
+                    </div>
+                </div>
+                <div class="contact-info fade-in">
+                    <h3>APPOINTMENTS</h3>
+                    <p>Reserve your experience online</p>
+                    <p>or call us directly.</p>
+                    <p style="margin-top: 1rem;">Walk-ins welcome</p>
+                    <p>based on availability.</p>
+                    <a href="https://book.squareup.com/appointments/h9iuqgmy192wlo/location/L3WCV1NWDYNB6/services" class="book-btn" target="_blank" rel="noopener noreferrer">
+                        Reserve Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ORTTO BARBERSHOP. ALL RIGHTS RESERVED.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">◉</a>
+                <a href="#" aria-label="Twitter">✕</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links with offset for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#' || targetId === '#book') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 10;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Add header effect on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(0,0,0,0.98)';
+                header.style.backdropFilter = 'blur(10px)';
+                header.style.borderBottom = '1px solid var(--gold)';
+            } else {
+                header.style.background = 'var(--primary-black)';
+                header.style.backdropFilter = 'none';
+                header.style.borderBottom = '2px solid var(--gold)';
+            }
+        });
+
+        // Remove parallax effect that was causing overlap issues
+        // Parallax removed to prevent content overlap
+    </script>
+</body>
+</html>
