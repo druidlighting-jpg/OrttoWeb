@@ -810,25 +810,30 @@ footer p {
     }
 
     .logo-text .ortto {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        font-weight: 600;
     }
 
     .logo-text .barbershop {
-        font-size: 0.6rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 3px;
     }
 
     .hero h1 {
         font-size: 2rem;
         letter-spacing: 2px;
         max-width: 90%;
-        margin: 0 auto;
+        margin: 0 auto 2rem;  /* increased bottom margin from 1rem to 2rem */
         white-space: normal;
         word-break: break-word;
         overflow-wrap: break-word;
+        padding-top: 1rem;    /* added top padding for more space */
     }
 
     .hero .tagline {
         font-size: 0.9rem;
+        margin-bottom: 2.5rem; /* increased bottom margin */
     }
 
     /* Mobile: reduce book button sizes drastically to avoid layout issues */
