@@ -1,22 +1,5 @@
 /* ORTTO Barbershop Shared Styles - extracted from index.html */
 
-/* Reset box-sizing so padding/border don't increase element width (prevents mobile overflow) */
-* {
-    box-sizing: border-box;
-}
-
-/* Defensive: prevent any accidental horizontal overflow from creating a visible white bar */
-html {
-    overflow-x: hidden;
-}
-
-/* Ensure images never exceed their containers (prevents small image overflow) */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 :root {
     --primary-black: #000000;
     --secondary-black: #1a1a1a;
@@ -835,12 +818,30 @@ footer p {
     }
 
     .hero h1 {
-        font-size: 3rem;
-        letter-spacing: 5px;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        max-width: 90%;
+        margin: 0 auto;
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .hero .tagline {
         font-size: 0.9rem;
+    }
+
+    /* Mobile: reduce book button sizes drastically to avoid layout issues */
+    .book-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    .book-btn.btn-primary {
+        padding: 0.6rem 1rem;
+        font-size: 0.95rem;
+        min-width: auto;
     }
 
     .about-content {
@@ -877,21 +878,6 @@ footer p {
 
     .testimonials-grid {
         grid-template-columns: 1fr;
-    }
-    /* Prevent oversized primary CTA from forcing horizontal scroll on small screens */
-    .book-btn.btn-primary {
-        min-width: 0;
-        width: 100%;
-        padding: 0.9rem 1rem;
-        font-size: 1rem;
-    }
-    /* Header/book button should be compact on mobile to avoid layout issues */
-    .book-btn {
-        min-width: 0;
-        width: auto;
-        max-width: 180px;
-        padding: 0.45rem 0.8rem;
-        font-size: 0.9rem;
     }
 }
 

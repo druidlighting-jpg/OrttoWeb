@@ -784,12 +784,30 @@
             }
 
             .hero h1 {
-                font-size: 3rem;
-                letter-spacing: 5px;
+                font-size: 2rem;
+                letter-spacing: 2px;
+                max-width: 90%;
+                margin: 0 auto;
+                white-space: normal;
+                word-break: break-word;
+                overflow-wrap: break-word;
             }
 
             .hero .tagline {
                 font-size: 0.9rem;
+            }
+
+            /* Mobile: reduce book button sizes drastically to avoid layout issues */
+            .book-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+            }
+
+            .book-btn.btn-primary {
+                padding: 0.6rem 1rem;
+                font-size: 0.95rem;
+                min-width: auto;
             }
 
             .about-content {
