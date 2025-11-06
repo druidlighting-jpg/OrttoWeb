@@ -5,6 +5,18 @@
     box-sizing: border-box;
 }
 
+/* Defensive: prevent any accidental horizontal overflow from creating a visible white bar */
+html {
+    overflow-x: hidden;
+}
+
+/* Ensure images never exceed their containers (prevents small image overflow) */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 :root {
     --primary-black: #000000;
     --secondary-black: #1a1a1a;
@@ -872,6 +884,14 @@ footer p {
         width: 100%;
         padding: 0.9rem 1rem;
         font-size: 1rem;
+    }
+    /* Header/book button should be compact on mobile to avoid layout issues */
+    .book-btn {
+        min-width: 0;
+        width: auto;
+        max-width: 180px;
+        padding: 0.45rem 0.8rem;
+        font-size: 0.9rem;
     }
 }
 
