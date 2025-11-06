@@ -1,5 +1,10 @@
 /* ORTTO Barbershop Shared Styles - extracted from index.html */
 
+/* Reset box-sizing so padding/border don't increase element width (prevents mobile overflow) */
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --primary-black: #000000;
     --secondary-black: #1a1a1a;
@@ -860,6 +865,13 @@ footer p {
 
     .testimonials-grid {
         grid-template-columns: 1fr;
+    }
+    /* Prevent oversized primary CTA from forcing horizontal scroll on small screens */
+    .book-btn.btn-primary {
+        min-width: 0;
+        width: 100%;
+        padding: 0.9rem 1rem;
+        font-size: 1rem;
     }
 }
 
