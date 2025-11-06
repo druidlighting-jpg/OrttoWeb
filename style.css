@@ -246,11 +246,18 @@ nav {
 }
 
 .about-image {
-    background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
     height: 500px;
     position: relative;
     overflow: hidden;
     border: 1px solid var(--gold);
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: var(--transition);
 }
 
 .about-image::after {
@@ -367,11 +374,6 @@ nav {
     margin-top: 4rem;
 }
 
-.staff-member {
-    text-align: center;
-    position: relative;
-    transition: var(--transition);
-}
 
 .staff-photo {
     width: 200px;
@@ -505,18 +507,29 @@ nav {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .gallery-item {
     position: relative;
-    height: 350px;
-    background: linear-gradient(135deg, var(--secondary-black), var(--primary-black));
+    height: 400px;
+    background: var(--primary-black);
     overflow: hidden;
-    cursor: pointer;
     transition: var(--transition);
     border: 1px solid #e0e0e0;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
 }
 
 .gallery-item:hover {
@@ -542,6 +555,71 @@ nav {
 .gallery-item:hover::after {
     opacity: 1;
 }
+
+/* Lightbox / modal for gallery view */
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.85);
+    z-index: 10000;
+    padding: 2rem;
+}
+
+.gallery-modal.active {
+    display: flex;
+}
+
+.gallery-modal .modal-content {
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+}
+
+.gallery-modal img.modal-img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: var(--gold);
+    color: var(--primary-black);
+    border: none;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.modal-nav button {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 0.6rem 0.8rem;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
 
 /* Testimonials */
 .testimonials {

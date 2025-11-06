@@ -286,11 +286,16 @@
         }
 
         .about-image {
-            background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
             height: 500px;
             position: relative;
             overflow: hidden;
             border: 1px solid var(--gold);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .about-image::after {
@@ -895,8 +900,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#staff">Staff</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="staff.html">Staff</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -912,7 +917,7 @@
             <p class="tagline">The Premium Barbershop Experience</p>
             <p class="hero-description">
                 Where classic craftsmanship meets contemporary excellence. 
-                Experience the finest in men's grooming at Boston's premier destination for the modern gentleman.
+                Experience the finest in men's grooming in Greater Boston. The premier destination for the modern gentleman.
             </p>
             <div class="hero-cta">
                 <a href="https://book.squareup.com/appointments/h9iuqgmy192wlo/location/L3WCV1NWDYNB6/services" class="book-btn btn-primary" target="_blank" rel="noopener noreferrer">Book Appointment</a>
@@ -929,24 +934,27 @@
                     <h2>THE ORTTO STANDARD</h2>
                     <p>
                         ORTTO Barbershop represents the pinnacle of men's grooming excellence. 
-                        Our master barbers combine time-honored techniques with contemporary precision 
+                        Our master barbers combine time-honored techniques with artistic precision 
                         to deliver an unparalleled grooming experience.
                     </p>
                     <p>
                         <strong>Distinction in Every Detail:</strong>
                     </p>
                     <ul>
-                        <li>Master barbers with decades of refined expertise</li>
+                        <li>Master barbering with decades of refined expertise</li>
                         <li>Personalized consultations for every client</li>
                         <li>Traditional straight razor techniques</li>
                         <li>Premium imported grooming products</li>
-                        <li>Luxurious atmosphere of sophistication</li>
+                        <li>Welcoming atmosphere of family, friends and first-timers</li>
                     </ul>
                     <p style="margin-top: 2rem; font-style: italic; color: var(--text-gray);">
                         "Excellence is not just our standard — it's our tradition."
                     </p>
                 </div>
-                <div class="about-image fade-in"></div>
+                <div class="about-image fade-in">
+                    <img src="assets/fadephoto.png" alt="Professional fade haircut at ORTTO Barbershop">
+                    <img src="assets/fade-cut.jpg" alt="Professional fade haircut" class="about-img">
+                </div>
             </div>
         </div>
     </section>
@@ -961,125 +969,46 @@
             <div class="services-grid">
                 <div class="service-card fade-in">
                     <div class="service-icon">✂</div>
-                    <h3>SIGNATURE CUT</h3>
+                    <h3>SIGNATURE HAIRCUT</h3>
                     <p>Precision haircut with consultation, cleansing, and finishing touches</p>
-                    <p class="service-price">$45</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">◆</div>
-                    <h3>EXECUTIVE SHAVE</h3>
-                    <p>Traditional straight razor shave with hot towel and aftercare treatment</p>
-                    <p class="service-price">$55</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">▬</div>
-                    <h3>BEARD SCULPTING</h3>
-                    <p>Expert beard shaping, trimming, and conditioning service</p>
                     <p class="service-price">$35</p>
                 </div>
                 <div class="service-card fade-in">
+                    <div class="service-icon">◆</div>
+                    <h3>BEARD SHAVE</h3>
+                    <p>Traditional straight razor shave with hot towel aftercare treatment</p>
+                    <p class="service-price">$30</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">▬</div>
+                    <h3>BRAZILIAN BLOWOUT MEN'S</h3>
+                    <p>Expert shaping, trimming, and straighting service</p>
+                    <p class="service-price">$70</p>
+                </div>
+                <div class="service-card fade-in">
                     <div class="service-icon">★</div>
-                    <h3>THE ORTTO EXPERIENCE</h3>
-                    <p>Complete grooming package including cut, shave, and beard service</p>
-                    <p class="service-price">$125</p>
+                    <h3>PREMIUM CUT</h3>
+                    <p>Complete grooming package including haircut, eyebrow, nose and beard service</p>
+                    <p class="service-price">$79</p>
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-icon">○</div>
-                    <h3>GREY BLENDING</h3>
-                    <p>Natural color enhancement and grey coverage treatment</p>
-                    <p class="service-price">$65</p>
+                    <h3>HAIRCUT, BEARD and BROWS</h3>
+                    <p> HB&B, full service to keep you looking clean and fresh.</p>
+                    <p class="service-price">$55</p>
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-icon">◈</div>
-                    <h3>FACIAL TREATMENT</h3>
-                    <p>Rejuvenating facial with cleansing and moisturizing therapy</p>
+                    <h3>EYEBROWS DESIGNER</h3>
+                    <p> Comprensive eyebrow service with consultation and shaping </p>
                     <p class="service-price">$75</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Staff Section -->
-    <section class="staff" id="staff">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>OUR MASTER BARBERS</h2>
-                <p>Meet the artisans behind the experience</p>
-            </div>
-            <div class="staff-grid">
-                <div class="staff-member fade-in">
-                    <div class="staff-photo staff-photo-1"></div>
-                    <h3 class="staff-name">MARCUS ORTEGA</h3>
-                    <p class="staff-title">Founder & Master Barber</p>
-                    <p class="staff-experience">20+ Years Experience</p>
-                    <p class="staff-specialties">
-                        Specializes in classic cuts, straight razor shaves, and traditional European techniques
-                    </p>
-                    <div class="staff-social">
-                        <a href="#" aria-label="Instagram">◉</a>
-                        <a href="#" aria-label="LinkedIn">in</a>
-                    </div>
-                </div>
-                <div class="staff-member fade-in">
-                    <div class="staff-photo staff-photo-2"></div>
-                    <h3 class="staff-name">JAMES MILLER</h3>
-                    <p class="staff-title">Senior Barber</p>
-                    <p class="staff-experience">15+ Years Experience</p>
-                    <p class="staff-specialties">
-                        Expert in modern fades, textured cuts, and beard sculpting
-                    </p>
-                    <div class="staff-social">
-                        <a href="#" aria-label="Instagram">◉</a>
-                        <a href="#" aria-label="LinkedIn">in</a>
-                    </div>
-                </div>
-                <div class="staff-member fade-in">
-                    <div class="staff-photo staff-photo-3"></div>
-                    <h3 class="staff-name">ALESSANDRO ROSSI</h3>
-                    <p class="staff-title">Style Director</p>
-                    <p class="staff-experience">12+ Years Experience</p>
-                    <p class="staff-specialties">
-                        Contemporary styling, precision cuts, and color treatments
-                    </p>
-                    <div class="staff-social">
-                        <a href="#" aria-label="Instagram">◉</a>
-                        <a href="#" aria-label="LinkedIn">in</a>
-                    </div>
-                </div>
-                <div class="staff-member fade-in">
-                    <div class="staff-photo staff-photo-4"></div>
-                    <h3 class="staff-name">DAVID CHEN</h3>
-                    <p class="staff-title">Senior Stylist</p>
-                    <p class="staff-experience">10+ Years Experience</p>
-                    <p class="staff-specialties">
-                        Asian hair expertise, creative designs, and detailed finishing
-                    </p>
-                    <div class="staff-social">
-                        <a href="#" aria-label="Instagram">◉</a>
-                        <a href="#" aria-label="LinkedIn">in</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>OUR CRAFT</h2>
-                <p>Precision and artistry in every detail</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item fade-in"></div>
-                <div class="gallery-item fade-in"></div>
-                <div class="gallery-item fade-in"></div>
-                <div class="gallery-item fade-in"></div>
-                <div class="gallery-item fade-in"></div>
-                <div class="gallery-item fade-in"></div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
@@ -1092,26 +1021,24 @@
                 <div class="testimonial-card fade-in">
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">
-                        The attention to detail at ORTTO is unmatched. Every visit feels like a luxury experience. 
-                        They've earned my loyalty for life.
+                        Makes you feel at home from the moment you walk in. 
+                        The vibe is great, the service is top-notch, and you can tell he really cares about every cut. Highly recommend!
                     </p>
-                    <p class="testimonial-author">— JAMES WELLINGTON</p>
+                    <p class="testimonial-author">— JOUBER COSTA</p>
                 </div>
                 <div class="testimonial-card fade-in">
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">
-                        ORTTO has redefined what I expect from a barbershop. The craftsmanship, 
-                        the atmosphere, the service — all exceptional.
+                        Just had a cut and I couldn’t be happier they got me right and the place is clean, the vibe is really dope , and the barbers really know what they’re doing. Highly recommend if you’re in the area!
                     </p>
-                    <p class="testimonial-author">— ROBERT STERLING</p>
+                    <p class="testimonial-author">— YGOR SIQUEIRA</p>
                 </div>
                 <div class="testimonial-card fade-in">
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">
-                        Simply the finest barbershop in Boston. The traditional shave is an art form here, 
-                        and the results speak for themselves.
+                        A friend recommended ORTTO, and I’m glad I gave it a shot. Felipe is a true professional. I explained what I was looking for, and not only did he follow my instructions—he exceeded my expectations. I highly recommend this barbershop to anyone looking for a top-tier haircut experience.
                     </p>
-                    <p class="testimonial-author">— MICHAEL ASHFORD</p>
+                    <p class="testimonial-author">— CHRYSTYAN OLIVEIRA</p>
                 </div>
             </div>
         </div>
@@ -1127,10 +1054,10 @@
             <div class="contact-content">
                 <div class="contact-info fade-in">
                     <h3>LOCATION</h3>
-                    <p>456 Newbury Street</p>
-                    <p>Back Bay, Boston</p>
-                    <p>MA 02116</p>
-                    <p style="margin-top: 1rem;">(617) 555-ORTTO</p>
+                    <p>400 Main Street</p>
+                    <p>Woburn, MA</p>
+                    <p>MA 01801</p>
+                    <p style="margin-top: 1rem;">(774) 502-5311</p>
                 </div>
                 <div class="contact-info fade-in">
                     <h3>HOURS</h3>

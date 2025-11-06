@@ -36,12 +36,24 @@
                 <p>Precision and artistry in every detail</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item fade-in"></div>
-                <div class="gallery-item fade-in"></div>
-                <div class="gallery-item fade-in"></div>
-                <div class="gallery-item fade-in"></div>
-                <div class="gallery-item fade-in"></div>
-                <div class="gallery-item fade-in"></div>
+                    <div class="gallery-item fade-in">
+                        <img src="assets/gallery/titlegallery.png" alt="ORTTO Barbershop Gallery Image 1">
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="assets/gallery/gallery1.png" alt="ORTTO Barbershop Gallery Image 2">
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="assets/gallery/gallery2.png" alt="ORTTO Barbershop Gallery Image 3">
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="assets/gallery/gallery3.png" alt="ORTTO Barbershop Gallery Image 4">
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="assets/gallery/gallery4.png" alt="ORTTO Barbershop Gallery Image 5">
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="assets/gallery/gallery5.png" alt="ORTTO Barbershop Gallery Image 6">
+                    </div>
             </div>
         </div>
     </section>
@@ -57,8 +69,68 @@
             </div>
         </div>
     </footer>
+    <!-- Gallery modal (lightbox) -->
+    <div class="gallery-modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <button class="modal-close" aria-label="Close">✕</button>
+            <img src="" alt="" class="modal-img">
+            <div class="modal-nav">
+                <button class="modal-prev" aria-label="Previous">◀</button>
+                <button class="modal-next" aria-label="Next">▶</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // ...existing code for menu toggle and fade-in...
+        // menu toggle and fade-in code placeholder (kept if present elsewhere)
+
+        // Lightbox behavior for gallery items
+        (function () {
+            const modal = document.querySelector('.gallery-modal');
+            const modalImg = modal.querySelector('img.modal-img');
+            const closeBtn = modal.querySelector('.modal-close');
+            const prevBtn = modal.querySelector('.modal-prev');
+            const nextBtn = modal.querySelector('.modal-next');
+
+            const items = Array.from(document.querySelectorAll('.gallery-item'));
+            const srcs = items.map(i => {
+                const img = i.querySelector('img');
+                return img ? img.getAttribute('src') : null;
+            }).filter(Boolean);
+
+            function openAt(index) {
+                index = (index + srcs.length) % srcs.length;
+                modalImg.src = srcs[index];
+                modal.dataset.index = index;
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+            }
+
+            function close() {
+                modal.classList.remove('active');
+                modal.setAttribute('aria-hidden', 'true');
+            }
+
+            items.forEach((item, i) => {
+                item.addEventListener('click', () => openAt(i));
+            });
+
+            closeBtn.addEventListener('click', close);
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) close();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!modal.classList.contains('active')) return;
+                if (e.key === 'Escape') close();
+                if (e.key === 'ArrowRight') openAt(+modal.dataset.index + 1);
+                if (e.key === 'ArrowLeft') openAt(+modal.dataset.index - 1);
+            });
+
+            prevBtn.addEventListener('click', (e) => { e.stopPropagation(); openAt(+modal.dataset.index - 1); });
+            nextBtn.addEventListener('click', (e) => { e.stopPropagation(); openAt(+modal.dataset.index + 1); });
+        })();
     </script>
 </body>
 </html>
